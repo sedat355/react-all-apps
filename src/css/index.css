@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }  
+  h1 {
+    font-size: 32px;
+    font-weight: bold;
+  }
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  h3 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .sidebar-list-item {
+    @apply whitespace-nowrap pr-8 mb-2
+  }
+  
+}
