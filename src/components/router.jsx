@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import Accordion from "../pages/Accordion";
 import DigitalAssistans from "../pages/DigitalAssistans";
 import ButtonPage from "../pages/ButtonPage";
+import AddAnimal from "../pages/AddAnimal";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,11 @@ const router = createBrowserRouter([
       {
         path: 'digital-assistans',
         element: <DigitalAssistans/>
-      }
+      },
+      {
+        path: 'add-animal',
+        element: <AddAnimal/>
+      },
     ]
   }
 ])

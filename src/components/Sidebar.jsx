@@ -15,6 +15,9 @@ const Sidebar = () => {
       <li className="sidebar-list-item">
         <NavLink to="/accordion">Accordion</NavLink>
       </li>
+      <li className="sidebar-list-item">
+        <NavLink to="/add-animal">Add Animal</NavLink>
+      </li>
     </ul>
   )
 }
