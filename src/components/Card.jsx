@@ -1,8 +1,8 @@
 const Card = ({ card }) => {
   return (
-    <div className="flex flex-col w-56 shadow-lg border">
+    <div className="flex flex-col w-48 shadow-lg border">
       <div className="mb-2 flex items-center justify-center">
-        <img className="max-w-56 object-cover" src={card.imageUrl} alt={card.title} />
+        <img className="object-cover" src={card.imageUrl} alt={card.title} />
       </div>
 
       <div className="p-4 flex flex-col h-full">

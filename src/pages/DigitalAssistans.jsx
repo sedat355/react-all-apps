@@ -16,14 +16,14 @@ const cardsData = [
     imageUrl: cortana,
     title: 'Cortana',
     subtitle: '@cortana33',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dolor ex, vehicula in tortor non, convallis '
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dolor ex, convallis '
   },
   {
     id: 2,
     imageUrl: siri,
     title: 'Siri',
     subtitle: '@siri77',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dolor ex, vehicula in tortor non Praesent ullamcorper accumsan condimentum. '
+    description: 'Lorem ipsum dolor sit amet, vehicula in tortor non Praesent ullamcorper accumsan condimentum. '
   },
 
 ]
