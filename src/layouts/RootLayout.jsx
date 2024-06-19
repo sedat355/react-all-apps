@@ -6,7 +6,7 @@ const RootLayout = () => {
     <div className='flex m-4'>
       <Sidebar/>
 
-      <main className='w-full flex items-start justify-start ml-16'>
+      <main className='max-w-lg flex items-start justify-start ml-16'>
         <Outlet/>
       </main>
     

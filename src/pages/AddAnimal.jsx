@@ -9,9 +9,6 @@ import Button from '../components/Button'
 
 const animalsArray = ['bird', 'cat', 'cow', 'dog', 'gator', 'horse'];
 
-const animalsObject = {
-  bird, cat, cow, dog, gator, horse
-}
 
 const getRandomAnimal = (arr) => {
   const randomIndex = Math.floor(Math.random() * (arr.length));
@@ -19,6 +16,10 @@ const getRandomAnimal = (arr) => {
 }
 
 getRandomAnimal(animalsArray)
+
+const animalsObject = {
+  bird, cat, cow, dog, gator, horse
+}
 
 const AddAnimal = () => {
   const [ animals, setAnimals ] = useState([]);
@@ -28,7 +29,13 @@ const AddAnimal = () => {
     setAnimals([...animals, animal])
   }
 
-  console.log(animals)
+  const renderedAnimals = animals.map( (animal, index) => {
+    return(
+      <li className='border p-2 rounded border-black-one' key={index}>
+        <img className='h-20 w-20' src={animalsObject[animal]} alt={animal} />
+      </li>
+    )
+  })
 
   return (
     <div>
@@ -39,10 +46,8 @@ const AddAnimal = () => {
         Add Animal
       </Button>
 
-      <ul className='flex mt-8'>
-        <li>
-          <img className='w-20 h-20' src={animalsObject[getRandomAnimal(animalsArray)]} alt="bird" />
-        </li>
+      <ul className='flex flex-wrap items-center justify-center gap-4 mt-8'>
+        {renderedAnimals}
       </ul>
     </div>
   )
