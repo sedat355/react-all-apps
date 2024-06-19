@@ -24,9 +24,17 @@ const animalsObject = {
 const AddAnimal = () => {
   const [ animals, setAnimals ] = useState([]);
   
+  console.log(animals)
+  
   const addAnimal = () => {
     const animal = getRandomAnimal(animalsArray)
-    setAnimals([...animals, animal])
+    if(!animals.includes(animal)) {
+      setAnimals([...animals, animal])
+    } else if(animals.length !== animalsArray.length){
+      addAnimal();
+    } else {
+      alert("Gösterilecek başka hayvan yok!!")
+    }
   }
 
   const renderedAnimals = animals.map( (animal, index) => {
