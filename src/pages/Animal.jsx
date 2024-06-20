@@ -14,11 +14,10 @@ const animalsObject = {
 const Animal = ({animal}) => {
   const [ clicks, setClicks ] = useState(0)
 
-  const handleHeartClick = (e) => {
-    console.log(e.target)
+  const handleHeartClick = () => {
     setClicks(clicks + 1)
   }
-  
+
   return (
     <li
       onClick={handleHeartClick}
