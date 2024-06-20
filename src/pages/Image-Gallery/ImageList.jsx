@@ -7,7 +7,7 @@ const ImageList = ({images}) => {
   })
 
   return (
-    <ul className='grid grid-cols-3 grid-flow-row-dense gap-1'>
+    <ul className='image-list'>
       {renderedImages}
     </ul>
   )
