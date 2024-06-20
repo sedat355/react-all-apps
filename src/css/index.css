@@ -20,6 +20,9 @@
     font-size: 20px;
     font-weight: bold;
   }
+  input {
+    @apply w-1/2 px-2 py-1 rounded outline-none
+  }
   .sidebar-list-item {
     @apply whitespace-nowrap pr-8 mb-2
   }

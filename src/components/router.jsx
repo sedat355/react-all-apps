@@ -5,6 +5,7 @@ import Accordion from "../pages/Accordion";
 import DigitalAssistans from "../pages/DigitalAssistans";
 import ButtonPage from "../pages/ButtonPage";
 import AddAnimal from "../pages/AddAnimal";
+import ImageGallery from "../pages/ImageGallery";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: 'add-animal',
         element: <AddAnimal/>
+      },
+      {
+        path: 'image-gallery',
+        element: <ImageGallery/>
       },
     ]
   }
