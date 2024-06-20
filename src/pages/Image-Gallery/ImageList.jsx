@@ -1,8 +1,15 @@
-import React from 'react'
+import Image from './Image'
 
-const ImageList = () => {
+const ImageList = ({images}) => {
+
+  const renderedImages = images.map(image => {
+    return <Image key={image.id} image={image}/>
+  })
+
   return (
-    <div>ImageList</div>
+    <ul className='flex flex-wrap gap-1'>
+      {renderedImages}
+    </ul>
   )
 }
 

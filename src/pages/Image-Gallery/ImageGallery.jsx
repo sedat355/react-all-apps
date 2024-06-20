@@ -3,6 +3,9 @@ import { useState } from "react"
 
 const ImageGallery = () => {
   const [searchTerm, setSearchTerm] = useState("")
+  const [images, setImages] = useState([])
+
+  console.log(images)
 
   const options = {
     method: "GET",
@@ -17,7 +20,7 @@ const ImageGallery = () => {
     const response = await fetch(baseUrl + "/" + term, options)
     const data = await response.json()
 
-    console.log(data.results)
+    setImages(data.results)
 
     return data
   }
@@ -29,8 +32,8 @@ const ImageGallery = () => {
   }
 
   return (
-    <>
-      <form onSubmit={handleSubmit} className="w-full bg-yellow-one p-4">
+    <div className="w-full">
+      <form onSubmit={handleSubmit} className="mb-4 w-full bg-yellow-one p-4">
         <input
           value={searchTerm}
           onChange={e => setSearchTerm(e.target.value)}
@@ -39,8 +42,8 @@ const ImageGallery = () => {
         />
       </form>
 
-      <ImageList />
-    </>
+      <ImageList images={images} />
+    </div>
   )
 }
 

@@ -1,6 +1,10 @@
-const Image = () => {
+const Image = ({image}) => {
+  console.log(image)
+
   return (
-    <div>Image</div>
+    <div>
+      <img src={image.urls.thumb} alt={image.title} />
+    </div>
   )
 }
 
