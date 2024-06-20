@@ -6,12 +6,21 @@ const ImageGallery = () => {
   const [searchTerm, setSearchTerm] = useState("")
   const [images, setImages] = useState([])
 
-  const handleSubmit = e => {
+  //! Birinci yöntem:
+  const handleSubmit = async(e) => {
     e.preventDefault()
-    fetchImages(searchTerm)
-      .then(data => setImages(data))
+    const data = await fetchImages(searchTerm)
+    setImages(data)
     setSearchTerm("")
   }
+
+  //! İkinci yöntem:
+  // const handleSubmit = (e) => {
+  //   e.preventDefault()
+  //   fetchImages(searchTerm)
+  //     .then(data => setImages(data))
+  //   setSearchTerm("")
+  // }
 
   return (
     <div className="w-full">
