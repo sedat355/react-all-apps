@@ -10,7 +10,6 @@ const ImageGallery = () => {
     e.preventDefault()
     fetchImages(searchTerm)
       .then(data => setImages(data))
-
     setSearchTerm("")
   }
 

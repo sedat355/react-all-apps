@@ -2,8 +2,6 @@ import Image from './Image'
 
 const ImageList = ({images}) => {
 
-  console.log(images)
-
   const renderedImages = images.map(image => {
     return <Image key={image.id} image={image}/>
   })

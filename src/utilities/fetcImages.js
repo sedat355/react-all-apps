@@ -8,8 +8,11 @@ const options = {
 const baseUrl = "https://api.unsplash.com/search/photos?query="
 
 export const fetchImages = async (term) => {
-  const response = await fetch(baseUrl + "/" + term, options)
-  const data = await response.json()
-
-  return data.results
+  try {
+    const response = await fetch(baseUrl + "/" + term, options)
+    const data = await response.json()
+    return data.results
+  } catch (error) {
+    throw Error('veriler getirilemedi!!')
+  }
 }
