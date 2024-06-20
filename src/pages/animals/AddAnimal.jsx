@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import Button from '../components/Button'
-import Animal from './Animal'
+import Button from '../../components/Button'
+import Animal from './Animal';
 
 const animalsArray = ['bird', 'cat', 'cow', 'dog', 'gator', 'horse'];
 
