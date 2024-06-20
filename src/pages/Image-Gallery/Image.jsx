@@ -3,7 +3,7 @@ const Image = ({image}) => {
 
   return (
     <div>
-      <img src={image.urls.thumb} alt={image.title} />
+      <img className="w-full h-full object-cover" src={image.urls.thumb} alt={image.title} />
     </div>
   )
 }

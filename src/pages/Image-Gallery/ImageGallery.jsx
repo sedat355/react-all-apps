@@ -5,8 +5,6 @@ const ImageGallery = () => {
   const [searchTerm, setSearchTerm] = useState("")
   const [images, setImages] = useState([])
 
-  console.log(images)
-
   const options = {
     method: "GET",
     headers: {
