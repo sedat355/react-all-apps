@@ -1,7 +1,7 @@
 import classNames from "classnames"
 import PropTypes from "prop-types"
 
-const Button = ({children, btnType, size="medium", handleClick, ...rest}) => {
+const Button = ({children, btnType, type="button", size="medium", handleClick, ...rest}) => {
 
   const baseClasses=`flex items-center justify-center font-semibold rounded bg-black-one ${rest.className}`;
 
@@ -21,12 +21,13 @@ const Button = ({children, btnType, size="medium", handleClick, ...rest}) => {
 
   const btnClasses = classNames(baseClasses, variants)
 
-  return <button onClick={handleClick} className={btnClasses}>{children}</button>
+  return <button type={type} onClick={handleClick} className={btnClasses}>{children}</button>
 }
 
 Button.propTypes = {
   btnType: PropTypes.oneOf(['primary', 'passive', 'success', 'danger', 'outline']),
   size: PropTypes.oneOf(["small", "medium", "large", "circle", "full"]),
+  type: PropTypes.oneOf(["button", "submit", "reset"])
 }
 
 export default Button
