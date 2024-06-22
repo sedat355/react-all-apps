@@ -11,7 +11,7 @@ const Button = ({children, btnType, type="button", size="medium", handleClick, .
     "bg-green-two text-white": btnType === "success",
     "bg-red-one text-white": btnType === "danger",
     "bg-transparent text-black border border-black-one": btnType === "outline",
-    "p-1.5 rounded-full": size === 'circle',
+    "p-1.5 rounded-full text-black": size === 'circle',
     "px-2 py-1 text-sm w-fit": size === 'small',
     "px-4 py-1 text-md w-fit": size === 'medium',
     "px-6 py-2 text-lg w-fit": size === 'large',  
