@@ -26,6 +26,7 @@ const ImageGallery = () => {
     <div className="w-full">
       <form onSubmit={handleSubmit} className="mb-4 w-full bg-yellow-one p-4">
         <input
+          className="w-1/2 px-2 py-1 rounded outline-none"
           value={searchTerm}
           onChange={e => setSearchTerm(e.target.value)}
           type="text"
