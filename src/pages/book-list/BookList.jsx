@@ -15,8 +15,19 @@ const BookList = () => {
     setBooks(books.filter(book => book.id !== id))
   }
 
+  const editBook = (id, newName) => {
+    const bookList = books.map( book => {
+      if( book.id === id ) {
+        return {...book, name: newName }
+      }
+      return book;
+    })
+
+    setBooks(bookList)
+  }
+
   const renderedBooks = books.map(book => {
-    return <Book key={book.id} book={book} deleteBook={deleteBook}/>
+    return <Book key={book.id} book={book} deleteBook={deleteBook} editBook={editBook}/>
   })
 
   return (

@@ -46,7 +46,7 @@ const Book = ({ book, deleteBook, editBook }) => {
 
       {isOpenEdit 
         ? (
-          <BookEdit />
+          <BookEdit book={book} editBook={editBook} isOpenEdit={isOpenEdit} setIsOpenEdit={setIsOpenEdit}/>
         )
         : (
           <span className="inline-block my-6">

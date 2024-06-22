@@ -1,12 +1,25 @@
+import { useState } from "react"
 import Button from "../../components/Button"
 
-const BookEdit = () => {
+const BookEdit = ({book, editBook, isOpenEdit, setIsOpenEdit}) => {
+  const [ inputVal, setInputVal ] = useState(book.name);
+  
+  const handleSave = () => {
+    editBook(book.id, inputVal)
+    setIsOpenEdit(!isOpenEdit)
+  }
+
   return (
     <form className="mt-2 flex flex-col space-y-2">
-      <input className="border border-gray-one px-2 py-1" />
+      <input
+        value={inputVal} 
+        onChange={(e) => setInputVal(e.target.value)}
+        className="border border-gray-one px-2 py-1" />
       <Button 
+        handleClick={handleSave}
         className="text-white"
-        size="small"
+        size="full"
+        btnType="primary"
       >
         Save
       </Button>
