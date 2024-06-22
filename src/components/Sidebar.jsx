@@ -21,6 +21,9 @@ const Sidebar = () => {
       <li className="sidebar-list-item">
         <NavLink to="/image-gallery">Image Gallery</NavLink>
       </li>
+      <li className="sidebar-list-item">
+        <NavLink to="/book-list">Book List</NavLink>
+      </li>
     </ul>
   )
 }

@@ -6,6 +6,7 @@ import DigitalAssistans from "../pages/DigitalAssistans"
 import ButtonPage from "../pages/ButtonPage"
 import AddAnimal from "../pages/animals/AddAnimal"
 import ImageGallery from "../pages/Image-Gallery/ImageGallery"
+import BookList from "../pages/book-list/BookList"
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,11 @@ const router = createBrowserRouter([
         path: "image-gallery",
         element: <ImageGallery />,
       },
+      {
+        path: "book-list",
+        element: <BookList/>
+      
+      }
     ],
   },
 ])
