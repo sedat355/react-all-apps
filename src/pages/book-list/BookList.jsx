@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import BookForm from "./BookForm"
 import Book from "./Book";
+import axios from "axios";
 
 const BookList = () => {
   const [ books, setBooks ] = useState([]);
@@ -34,7 +35,19 @@ const BookList = () => {
     setBooks([...books, data])
   }
 
-  const deleteBook = (id) => {
+  const deleteBook = async (id) => {
+    const url = "http://localhost:3000/books";
+    
+    const response = await fetch(`${url}/${id}`, {
+      method: "DELETE",
+    })
+    const data = await response.json();
+
+    console.log("data", data)
+
+    // const response = await axios.delete(`http:localhost:3000/books/${id}`)
+    // console.log("response",response)
+
     setBooks(books.filter(book => book.id !== id))
   }
 
