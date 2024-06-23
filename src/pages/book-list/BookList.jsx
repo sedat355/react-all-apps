@@ -1,11 +1,11 @@
-import { useContext, useEffect } from "react"
+import { useEffect } from "react"
 import BookForm from "./BookForm"
 import Book from "./Book"
-import { BooksContext } from "../../contexts/BooksContext"
 import { getBooks } from "../../utilities/getBooks"
+import useBooksContext from "../../hooks/useBooksContext"
 
 const BookList = () => {
-  const { books, setBooks } = useContext(BooksContext);
+  const { books, setBooks } = useBooksContext()
 
   console.log("booksContext:", books)
 
@@ -14,12 +14,7 @@ const BookList = () => {
   }, [])
 
   const renderedBooks = books.map(book => {
-    return (
-      <Book
-        key={book.id}
-        book={book}
-      />
-    )
+    return <Book key={book.id} book={book} />
   })
 
   return (

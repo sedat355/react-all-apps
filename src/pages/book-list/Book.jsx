@@ -1,20 +1,20 @@
 import { BiEditAlt } from "react-icons/bi"
 import { BsTrash } from "react-icons/bs"
 import Button from "../../components/Button"
-import { useContext, useState } from "react"
+import { useState } from "react"
 import BookEdit from "./BookEdit"
-import { BooksContext } from "../../contexts/BooksContext"
+import useBooksContext from "../../hooks/useBooksContext"
 
 const Book = ({ book }) => {
   const [isOpenEdit, setIsOpenEdit] = useState(false)
-  const { deleteBook, editBook } = useContext(BooksContext)
+  const { deleteBook, editBook } = useBooksContext()
 
   const handleDelete = () => {
     deleteBook(book.id)
   }
 
   const handleSaveClick = (id, newBookName) => {
-    editBook(id, newBookName);
+    editBook(id, newBookName)
     setIsOpenEdit(!isOpenEdit)
   }
 
@@ -46,16 +46,13 @@ const Book = ({ book }) => {
         </Button>
       </div>
 
-      {isOpenEdit 
-        ? (
-          <BookEdit book={book} editBook={editBook} handleSaveClick={handleSaveClick}/>
-        )
-        : (
-          <span className="inline-block my-6">
-            <strong>Book Name:</strong> {book.name}
-          </span>
-        )
-      }
+      {isOpenEdit ? (
+        <BookEdit book={book} handleSaveClick={handleSaveClick} />
+      ) : (
+        <span className="inline-block my-6">
+          <strong>Book Name:</strong> {book.name}
+        </span>
+      )}
     </li>
   )
 }
