@@ -1,9 +1,21 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import BookForm from "./BookForm"
 import Book from "./Book";
 
 const BookList = () => {
   const [ books, setBooks ] = useState([]);
+
+  useEffect(() => {
+    getBooks()
+  },[])
+
+  const getBooks = async () => {
+    const response = await fetch("http://localhost:3000/books")
+    const data = await response.json()
+
+    setBooks(data)
+    return data
+  }
 
   console.log(books)
 
