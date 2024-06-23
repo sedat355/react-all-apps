@@ -14,13 +14,23 @@ const BookList = () => {
     const data = await response.json()
 
     setBooks(data)
-    return data
   }
 
   console.log(books)
 
-  const addBook = (newBook) => {
-    setBooks([...books, newBook ])
+  const addBook = async (newBook) => {
+    const url = "http://localhost:3000/books";
+    const options = {
+      method: "POST",
+      body: JSON.stringify(newBook),
+      headers: { "Content-Type": "application/json"},
+    }
+
+    const response = await fetch(url, options );
+    const data = await response.json()
+
+    console.log(data)
+    getBooks()
   }
 
   const deleteBook = (id) => {
