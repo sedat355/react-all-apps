@@ -16,6 +16,11 @@ const Book = ({ book, deleteBook, editBook }) => {
     editBook(book)
   }
 
+  const handleSaveClick = (id, newBookName) => {
+    editBook(id, newBookName);
+    setIsOpenEdit(!isOpenEdit)
+  }
+
   return (
     <li className="shadow-xl p-2">
       {/* <img src={`https://picsum.photos/300/200/?random`} alt="photo" /> */}
@@ -46,7 +51,7 @@ const Book = ({ book, deleteBook, editBook }) => {
 
       {isOpenEdit 
         ? (
-          <BookEdit book={book} editBook={editBook} isOpenEdit={isOpenEdit} setIsOpenEdit={setIsOpenEdit}/>
+          <BookEdit book={book} editBook={editBook} handleSaveClick={handleSaveClick}/>
         )
         : (
           <span className="inline-block my-6">

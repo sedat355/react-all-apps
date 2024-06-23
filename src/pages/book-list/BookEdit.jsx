@@ -1,12 +1,11 @@
 import { useState } from "react"
 import Button from "../../components/Button"
 
-const BookEdit = ({book, editBook, isOpenEdit, setIsOpenEdit}) => {
+const BookEdit = ({book, handleSaveClick}) => {
   const [ inputVal, setInputVal ] = useState(book.name);
   
   const handleSave = () => {
-    editBook(book.id, inputVal)
-    setIsOpenEdit(!isOpenEdit)
+    handleSaveClick(book.id, inputVal)
   }
 
   return (
