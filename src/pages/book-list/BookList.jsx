@@ -6,29 +6,13 @@ import { BooksContext } from "../../contexts/BooksContext"
 import { getBooks } from "../../utilities/getBooks"
 
 const BookList = () => {
-  const { books, setBooks} = useContext(BooksContext);
+  const { books, setBooks } = useContext(BooksContext);
 
   console.log("booksContext:", books)
 
   useEffect(() => {
     getBooks("http://localhost:3000/books").then(data => setBooks(data))
   }, [])
-
-  const addBook = async newBook => {
-    const url = "http://localhost:3000/books"
-    const options = {
-      method: "POST",
-      body: JSON.stringify(newBook),
-      headers: { "Content-Type": "application/json" },
-    }
-
-    const response = await fetch(url, options)
-    const data = await response.json()
-
-    console.log("data: ", data) //data:  {id: 'lfGcdTV9Z_kJB43junsbg', name: 'asdfaf'}
-
-    setBooks([...books, data])
-  }
 
   const deleteBook = async id => {
     const url = "http://localhost:3000/books/"
@@ -87,7 +71,7 @@ const BookList = () => {
   return (
     <div className="w-full">
       <h1>Reading List</h1>
-      <BookForm addBook={addBook} />
+      <BookForm />
 
       <ul className="mt-4 flex gap-2 flex-wrap">{renderedBooks}</ul>
     </div>

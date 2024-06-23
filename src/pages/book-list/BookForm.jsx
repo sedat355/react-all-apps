@@ -3,8 +3,9 @@ import Button from "../../components/Button"
 import { nanoid } from "@reduxjs/toolkit"
 import { BooksContext } from "../../contexts/BooksContext"
 
-const BookForm = ({addBook}) => {
+const BookForm = () => {
   const [newBook, setNewBook] = useState('')
+  const { addBook } = useContext(BooksContext)
 
 
   const handleSubmit = (e) => {
