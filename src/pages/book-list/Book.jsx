@@ -1,11 +1,13 @@
 import { BiEditAlt } from "react-icons/bi"
 import { BsTrash } from "react-icons/bs"
 import Button from "../../components/Button"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import BookEdit from "./BookEdit"
+import { BooksContext } from "../../contexts/BooksContext"
 
-const Book = ({ book, deleteBook, editBook }) => {
+const Book = ({ book }) => {
   const [isOpenEdit, setIsOpenEdit] = useState(false)
+  const { deleteBook, editBook } = useContext(BooksContext)
 
   const handleDelete = () => {
     deleteBook(book.id)
