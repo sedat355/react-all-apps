@@ -3,6 +3,7 @@ import BookForm from "./BookForm"
 import Book from "./Book"
 import axios from "axios"
 import { BooksContext } from "../../contexts/BooksContext"
+import { getBooks } from "../../utilities/getBooks"
 
 const BookList = () => {
   const { books, setBooks} = useContext(BooksContext);
@@ -10,17 +11,8 @@ const BookList = () => {
   console.log("booksContext:", books)
 
   useEffect(() => {
-    getBooks().then(data => setBooks(data))
+    getBooks("http://localhost:3000/books").then(data => setBooks(data))
   }, [])
-
-  const getBooks = async () => {
-    const response = await fetch("http://localhost:3000/books")
-    const data = await response.json()
-
-    return data
-  }
-
-  console.log(books)
 
   const addBook = async newBook => {
     const url = "http://localhost:3000/books"
