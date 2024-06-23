@@ -70,7 +70,7 @@ const BookList = () => {
 
     const bookList = books.map( book => {
       if( book.id === id ) {
-        return {...book, name: newName }
+        return { ...data }
       }
       return book;
     })
