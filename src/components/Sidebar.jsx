@@ -22,7 +22,7 @@ const Sidebar = () => {
         <NavLink to="/image-gallery">Image Gallery</NavLink>
       </li>
       <li className="sidebar-list-item">
-        <NavLink to="/book-list">Book List</NavLink>
+        <NavLink to="/book-list-page">Book List Page</NavLink>
       </li>
     </ul>
   )
