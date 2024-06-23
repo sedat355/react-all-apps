@@ -6,14 +6,14 @@ const BookList = () => {
   const [ books, setBooks ] = useState([]);
 
   useEffect(() => {
-    getBooks()
+    getBooks().then(data => setBooks(data))
   },[])
 
   const getBooks = async () => {
     const response = await fetch("http://localhost:3000/books")
     const data = await response.json()
 
-    setBooks(data)
+    return data;
   }
 
   console.log(books)
@@ -29,8 +29,9 @@ const BookList = () => {
     const response = await fetch(url, options );
     const data = await response.json()
 
-    console.log(data)
-    getBooks()
+    console.log("data: ", data)//data:  {id: 'lfGcdTV9Z_kJB43junsbg', name: 'asdfaf'}
+
+    setBooks([...books, data])
   }
 
   const deleteBook = (id) => {
