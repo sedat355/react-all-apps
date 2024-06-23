@@ -11,29 +11,24 @@ const Book = ({ book, deleteBook, editBook }) => {
     deleteBook(book.id)
   }
 
-  const handleEdit = () => {
-    setIsOpenEdit(!isOpenEdit)
-    editBook(book)
-  }
-
   const handleSaveClick = (id, newBookName) => {
     editBook(id, newBookName);
     setIsOpenEdit(!isOpenEdit)
   }
 
   return (
-    <li className="shadow-xl p-2">
+    <li className="shadow-xl p-2 max-w-64">
       {/* <img src={`https://picsum.photos/300/200/?random`} alt="photo" /> */}
 
       <div className="relative">
         <img
-          className="object-cover max-w-full"
+          className="object-cover w-full"
           src={`https://picsum.photos/seed/${book.id}/300/200`}
           alt="photo"
         />
 
         <Button
-          handleClick={handleEdit}
+          handleClick={() => setIsOpenEdit(!isOpenEdit)}
           size="circle"
           className="bg-gray-50 absolute top-2 right-10"
         >
