@@ -5,13 +5,13 @@ import { getBooks } from "../../utilities/getBooks"
 import useBooksContext from "../../hooks/useBooksContext"
 
 const BookList = () => {
-  const { books, setBooks } = useBooksContext()
+  const { books, setBooks, stableGetBooks } = useBooksContext()
 
   console.log("booksContext:", books)
 
   useEffect(() => {
-    getBooks("http://localhost:3000/books").then(data => setBooks(data))
-  }, [])
+    stableGetBooks("http://localhost:3000/books").then(data => setBooks(data))
+  }, [stableGetBooks])
 
   const renderedBooks = books.map(book => {
     return <Book key={book.id} book={book} />

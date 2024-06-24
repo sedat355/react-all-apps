@@ -1,10 +1,13 @@
-import { createContext, useState } from "react";
+import { createContext, useCallback, useState } from "react";
+import { getBooks } from "../utilities/getBooks";
 
 export const BooksContext = createContext();
 
 const BooksContextProvider = ({children}) => {
   const [ books, setBooks ] = useState([])
 
+  const stableGetBooks = useCallback(getBooks, [])
+  
   const addBook = async newBook => {
     const url = "http://localhost:3000/books"
     const options = {
@@ -70,6 +73,7 @@ const BooksContextProvider = ({children}) => {
     addBook,
     editBook,
     deleteBook,
+    stableGetBooks,
   }
 
   return(
