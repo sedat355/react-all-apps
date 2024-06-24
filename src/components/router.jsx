@@ -6,8 +6,9 @@ import DigitalAssistans from "../pages/DigitalAssistans"
 import ButtonPage from "../pages/ButtonPage"
 import AddAnimal from "../pages/animals/AddAnimal"
 import ImageGallery from "../pages/Image-Gallery/ImageGallery"
-import BookList from "../pages/book-list/BookList"
 import BookListPage from "../pages/book-list/BookListPage"
+import About from "../pages/About"
+import Contact from "../pages/Contact"
 
 const router = createBrowserRouter([
   {
@@ -41,8 +42,16 @@ const router = createBrowserRouter([
       {
         path: "book-list-page",
         element: <BookListPage/>
-      
-      }
+      },
+      {
+        path: "about",
+        element: <About/>
+      },
+      {
+        path: "contact",
+        element: <Contact/>
+      },
+
     ],
   },
 ])

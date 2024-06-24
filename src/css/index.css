@@ -34,7 +34,10 @@
     @apply w-1/2 px-2 py-1 rounded outline-none
   } */
   .sidebar-list-item {
-    @apply whitespace-nowrap pr-8 mb-2
+    @apply whitespace-nowrap pr-8 mb-2 text-lg font-semibold text-black-three hover:text-black-four
+  }
+  .navbar-list-item {
+    @apply font-bold text-2xl text-yellow-400 hover:text-yellow-300
   }
   
 }

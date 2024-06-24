@@ -4,9 +4,6 @@ const Sidebar = () => {
   return (
     <ul className="flex flex-col">
       <li className="sidebar-list-item">
-        <NavLink to="/">Home</NavLink>
-      </li>
-      <li className="sidebar-list-item">
         <NavLink to="/digital-assistans">Digital Assistans</NavLink>
       </li>
       <li className="sidebar-list-item">
