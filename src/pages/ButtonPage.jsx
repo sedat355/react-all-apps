@@ -42,12 +42,14 @@ const ButtonPage = () => {
           <Button btnType="outline" size="circle-lg">
             <BiEditAlt />
           </Button>
+          <h4 className="w-full font-bold self-center text-right">size=circle-sm/md/lg</h4>
         </div>
 
-        <div className="w-full border border-black-two p-2 rounded">
+        <div className="flex w-full border border-black-two p-2 rounded">
           <Button btnType="primary" size="square">
             <GoChevronRight />
           </Button>
+          <h4 className="w-full font-bold text-right">size=square</h4>
         </div>
 
         <div className="w-full border border-black-two p-2 rounded flex items-start space-x-2">
@@ -60,6 +62,8 @@ const ButtonPage = () => {
           <Button btnType="outline" size="square-lg">
             <GoChevronLeft />
           </Button>
+
+          <h4 className="w-full self-center font-bold text-right">size=square-sm/md/lg</h4>
         </div>
         <div className="w-full flex items-start space-x-2 border border-black-two p-2 rounded">
           <Button btnType="primary" size="upright-sm">
@@ -71,6 +75,8 @@ const ButtonPage = () => {
           <Button btnType="outline" size="upright-lg">
             <GoChevronLeft />
           </Button>
+
+          <h4 className="w-full self-center font-bold text-right">size=upright-sm/md/lg</h4>
         </div>
       </div>
     </div>
