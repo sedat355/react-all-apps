@@ -31,7 +31,7 @@ const Book = ({ book }) => {
 
         <Button
           handleClick={() => setIsOpenEdit(!isOpenEdit)}
-          size="circle"
+          size="circle-sm"
           className="bg-gray-50 absolute top-2 right-10"
         >
           <BiEditAlt className="" />
@@ -39,7 +39,7 @@ const Book = ({ book }) => {
 
         <Button
           handleClick={handleDelete}
-          size="circle"
+          size="circle-sm"
           className="bg-gray-50 absolute top-2 right-2"
         >
           <BsTrash />
