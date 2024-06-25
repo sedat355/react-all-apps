@@ -1,4 +1,4 @@
-### <a href="https://sedatpolat-react-car-app.netlify.app/">Open on Netlify</a>
+### <a href="https://react-all-apps.netlify.app/">Open on Netlify</a>
 
 # React All Apps
 
