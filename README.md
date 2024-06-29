@@ -1,4 +1,6 @@
-# React + Vite
+### <a href="https://react-all-apps.netlify.app/">Open on Netlify</a>
+
+# React All Apps
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
