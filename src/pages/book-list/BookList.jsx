@@ -9,9 +9,9 @@ const BookList = () => {
 
   console.log("booksContext:", books)
 
-  useEffect(() => {
-    stableGetBooks("http://localhost:3000/books").then(data => setBooks(data))
-  }, [stableGetBooks])
+  // useEffect(() => {
+  //   stableGetBooks("http://localhost:3000/books").then(data => setBooks(data))
+  // }, [stableGetBooks])
 
   const renderedBooks = books.map(book => {
     return <Book key={book.id} book={book} />
