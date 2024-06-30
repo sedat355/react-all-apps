@@ -2,16 +2,27 @@ import { useState } from "react"
 import AccordionItem from "./AccordionItem"
 
 const initialAccordions = [
-  {id: 0, title: "title-1", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla interdum, mi mattis consequat tempus, sapien nisl ornare quam, quis vulputate eros nulla ac libero. Quisque efficitur iaculis urna ac bibendum. "},
-  {id: 1, title: "title-2", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla interdum, mi mattis consequat tempus, sapien nisl ornare quam, quis vulputate eros nulla ac libero. Quisque efficitur iaculis urna ac bibendum. "},
-  {id: 2, title: "title-3", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla interdum, mi mattis consequat tempus, sapien nisl ornare quam, quis vulputate eros nulla ac libero. Quisque efficitur iaculis urna ac bibendum. "},
+  {id: 0, title: "title-1", isClose: true, desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla interdum, mi mattis consequat tempus, sapien nisl ornare quam, quis vulputate eros nulla ac libero. Quisque efficitur iaculis urna ac bibendum."},
+  {id: 1, title: "title-2", isClose: true, desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla interdum, mi mattis consequat tempus, sapien nisl ornare quam, quis vulputate eros nulla ac libero. Quisque efficitur iaculis urna ac bibendum."},
+  {id: 2, title: "title-3", isClose: true, desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla interdum, mi mattis consequat tempus, sapien nisl ornare quam, quis vulputate eros nulla ac libero. Quisque efficitur iaculis urna ac bibendum."},
 ]
 
 const Accordion = () => {
-  //const [ accordions, setAccordions ] = useState(initialAccordions)
+  const [ accordions, setAccordions ] = useState(initialAccordions)
 
-  const renderedAccordions = initialAccordions.map( item => {
-    return <AccordionItem key={item.id} item={item}/>
+  const handleClose = (id) => {
+    setAccordions(
+      accordions.map( item => {
+        if( item.id === id ) {
+          return {...item, isClose: !item.isClose}
+        }
+        return {...item, isClose: true};
+      })
+    )
+  }
+
+  const renderedAccordions = accordions.map( item => {
+    return <AccordionItem handleClose={handleClose} key={item.id} item={item}/>
   })
 
   return (
