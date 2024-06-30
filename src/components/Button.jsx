@@ -29,7 +29,7 @@ const Button = ({children, btnType, type="button", size="medium", handleClick, .
 
   const btnClasses = classNames(baseClasses, variants)
 
-  return <button type={type} onClick={handleClick} className={btnClasses}>{children}</button>
+  return <button {...rest} type={type} onClick={handleClick} className={btnClasses}>{children}</button>
 }
 
 Button.propTypes = {
