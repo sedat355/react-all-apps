@@ -9,6 +9,7 @@ import ImageGallery from "../pages/Image-Gallery/ImageGallery"
 import BookListPage from "../pages/book-list/BookListPage"
 import About from "../pages/About"
 import Contact from "../pages/Contact"
+import SelectPage from "../pages/select/SelectPage"
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: "contact",
         element: <Contact/>
+      },
+      {
+        path: "select",
+        element: <SelectPage/>
       },
 
     ],
