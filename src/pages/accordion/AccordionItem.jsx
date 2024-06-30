@@ -5,17 +5,17 @@ import Button from "../../components/Button"
 const AccordionItem = ({ item, handleClose }) => {
 
   return (
-    <div className="bg-gray-one flex flex-col">
-      <div className="px-3 py-2 flex items-center justify-between">
+    <div className="bg-gray-one flex flex-col mb-1">
+      <div onClick={() => handleClose(item.id)} className="cursor-pointer px-3 py-2 flex items-center justify-between">
         <h3>{item.title}</h3>
-        <Button handleClick={() => handleClose(item.id)} btnType="outline" className="border-none px-0">
+        <Button btnType="outline" className="border-none pr-0">
           {
             !item.isClose ? <GoTriangleDown className="text-3xl text-gray-three" /> : <GoTriangleLeft className="text-3xl text-gray-three" />
           }
         </Button>
       </div>
 
-      { !item.isClose && <div className="pl-8 pr-4 pt-1 pb-2 bg-gray-300">{item.desc}</div>}
+      { !item.isClose && <div className="pl-4 pr-2 pt-1 pb-2 bg-gray-300">{item.desc}</div>}
     </div>
   )
 }
