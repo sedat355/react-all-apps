@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom"
 import RootLayout from "../layouts/RootLayout"
 import Home from "../pages/Home"
-import Accordion from "../pages/Accordion"
+import Accordion from "../pages/accordion/Accordion"
 import DigitalAssistans from "../pages/DigitalAssistans"
 import ButtonPage from "../pages/ButtonPage"
 import AddAnimal from "../pages/animals/AddAnimal"
