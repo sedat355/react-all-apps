@@ -22,7 +22,7 @@ const Sidebar = () => {
         <NavLink to="/book-list-page">Book List Page</NavLink>
       </li>
       <li className="sidebar-list-item">
-        <NavLink to="/select">Select</NavLink>
+        <NavLink to="/dropdown">Dropdown Page</NavLink>
       </li>
     </ul>
   )
