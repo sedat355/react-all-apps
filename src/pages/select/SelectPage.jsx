@@ -1,12 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import OptionItem from "./OptionItem";
-
 
 const SelectPage = () => {
   const [ color, setColor ] = useState('')
   
-  const initialColors = ["red", "green", "blue", "yellow"];
-  console.log(color)
+  const initialColors = ["purple","red", "green", "yellow"];
+
+  // let possible = ["bg-red-500", "bg-blue-500", "bg-green-500", "bg-purple-500", "bg-yellow-500"];
+
+  // const createColors = (arr) => {
+  //   const colorsToUse = arr.map( color => {
+  //     return `bg-${color}-500`
+  //   })
+  //   return colorsToUse;
+  // }
+
+  // useEffect(() => {
+  //   let possibleColors = createColors(initialColors)
+  // },[])
   
   const handleChange = (e) => {
     setColor(e.target.value)
@@ -16,12 +27,10 @@ const SelectPage = () => {
     return <OptionItem key={color} color={color}/>
   })
 
-  let currColor;
+  let selectClasses = "py-1 text-xl w-full border border-black-one rounded"
   if( color ) {
-    currColor = `bg-${color}-500`
+    selectClasses += ` bg-${color}-500`
   }
-
-  console.log(currColor)
 
   return (
     <div className="w-full">
@@ -29,10 +38,10 @@ const SelectPage = () => {
       <select 
         onChange={handleChange} 
         value={color}
-        className={`py-1 text-xl w-full border border-black-one rounded ${currColor}`}
+        className={selectClasses}
       >
 
-        <option value="">Select</option>
+        <option value="" className="bg-white">Select</option>
         {renderedColors}
       </select>
     </div>

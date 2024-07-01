@@ -26,6 +26,7 @@ export default {
         'black-two': '#0d1b2a', 
         'black-three': '#3d405b', 
         'black-four': '#000814', 
+        // possible: ["bg-red-500", "bg-blue-500", "bg-green-500", "bg-purple-500", "bg-yellow-500"],
       }
     },
   },
