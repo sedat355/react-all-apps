@@ -1,9 +1,9 @@
 import OptionItem from "./OptionItem"
 
-const Panel = ({ options, isOpenPanel }) => {
+const Panel = ({ options, isOpenPanel, setIsOpenPanel, handleClickOption }) => {
 
   const renderedOptions = options.map( option => {
-    return <OptionItem key={option.value} option={option}>{option.title}</OptionItem>
+    return <OptionItem onClick={handleClickOption} key={option.value} option={option}>{option.title}</OptionItem>
   })
 
   return (
