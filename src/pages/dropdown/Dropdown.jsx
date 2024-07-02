@@ -16,7 +16,7 @@ const Dropdown = ({options, title, listType}) => {
     setIsOpenPanel(false)
     setSelectedOption(option)
   }
-  
+
   const handleClick = (e) => {
     // e.stopPropagation()
     setIsOpenPanel(!isOpenPanel)
@@ -24,13 +24,13 @@ const Dropdown = ({options, title, listType}) => {
 
   useEffect(() => {
     const close = (e) => {
-      if(!panelRef.current.contains(e.target)) {
-        console.log("panel dışına tıklandı")
-        setIsOpenPanel(false)
-      } else {
-
-        console.log("panel içine tıklandı")
+      if( !panelRef.current ) {
+        return; 
       }
+
+      if(!panelRef.current.contains(e.target)) {
+        setIsOpenPanel(false)
+      } 
     }
     document.body.addEventListener('click', close, true)
 
