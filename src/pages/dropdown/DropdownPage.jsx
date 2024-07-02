@@ -18,7 +18,7 @@ const DropdownPage = () => {
   ]
 
   return (
-    <div className="flex flex-col gap-y-2 w-full">
+    <div className="flex flex-col gap-y-2 w-full h-full">
       <Dropdown options={colors} title="Bir renk seçin" listType="colors"/>
       <Dropdown options={musics} title="Bir müzik türü seçin" listType="musics"/>
     </div>

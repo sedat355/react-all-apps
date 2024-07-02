@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import Button from "../../components/Button"
 import Panel from "./Panel"
 import { GoChevronDown } from "react-icons/go"
@@ -7,30 +7,39 @@ import { GoChevronLeft } from "react-icons/go"
 const Dropdown = ({options, title, listType}) => {
   const [ isOpenPanel, setIsOpenPanel] = useState(false)
   const [ selectedOption, setSelectedOption ] = useState(null)
+  const panelRef = useRef()
 
   const possibleColors = ["bg-red-500", "bg-blue-500", "bg-green-500", "bg-yellow-500", "bg-purple-500", "bg-orange-500"];
 
-  const handleClick = () => {
-    setIsOpenPanel(!isOpenPanel)
-  }
-
+  
   const handleClickOption = (option) => {
     setIsOpenPanel(false)
     setSelectedOption(option)
   }
+  
+  const handleClick = (e) => {
+    // e.stopPropagation()
+    setIsOpenPanel(!isOpenPanel)
+  }
 
-  // useEffect(() => {
-  //   const close = () => {
-  //     setIsOpenPanel(false)
-  //   }
-  //   document.body.addEventListener('click', close)
+  useEffect(() => {
+    const close = (e) => {
+      if(!panelRef.current.contains(e.target)) {
+        console.log("panel dışına tıklandı")
+        setIsOpenPanel(false)
+      } else {
 
-  //   return () => document.body.removeEventListener('click', close);
+        console.log("panel içine tıklandı")
+      }
+    }
+    document.body.addEventListener('click', close, true)
 
-  // },[])
+    return () => document.body.removeEventListener('click', close, true);
+
+  },[])
 
   return (
-  <section className="w-full">
+  <section className="w-full" id="section-panel" ref={panelRef}>
       <div
         onClick={handleClick}
         className={`bg-${selectedOption?.value}-500 relative border-2 border-black-one px-2 py-1 rounded-t-md cursor-pointer flex items-center`}

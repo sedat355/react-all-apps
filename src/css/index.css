@@ -29,6 +29,12 @@
     width: 100%;
     object-fit: cover;
   }
+  body {
+    min-height: 100vh;
+  }
+  /* #root {
+    min-height: 100vh;
+  } */
 
   /* input {
     @apply w-1/2 px-2 py-1 rounded outline-none
