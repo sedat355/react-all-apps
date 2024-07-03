@@ -19,10 +19,10 @@ const ModalPage = () => {
 
       {isOpenModal && (
         <>
-          <Modal isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal} />
+          <Modal setIsOpenModal={setIsOpenModal} />
           <div
             onClick={handleOverlayClick}
-            className="overlay bg-black opacity-60 w-screen h-screen absolute left-0 top-0"
+            className="overlay bg-black opacity-60 absolute inset-0"
           ></div>
         </>
       )}

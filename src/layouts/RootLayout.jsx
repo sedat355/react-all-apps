@@ -4,13 +4,13 @@ import { Outlet } from "react-router-dom"
 
 const RootLayout = () => {
   return (
-    <div className="root-layout h-screen flex flex-col">
+    <div className="root-layout flex flex-col">
       <Header />
 
-      <div className="flex m-4 items-start max-w-[1024px] h-full">
+      <div className="flex m-4 items-start max-w-[1024px]">
         <Sidebar />
 
-        <main className="w-full h-full flex items-start justify-start ml-16">
+        <main className="w-full flex items-start justify-start ml-16">
           <Outlet />
         </main>
       </div>

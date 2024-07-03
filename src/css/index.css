@@ -2,12 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
   *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
   }  
+  /* a.active {
+    color: black;
+  } */
   h1 {
     font-size: 32px;
     font-weight: bold;
@@ -29,18 +33,18 @@
     width: 100%;
     object-fit: cover;
   }
-  body {
+  /* body {
     min-height: 100vh;
-  }
-  #root {
+  } */
+  /* #root {
     min-height: 100vh;
-  }
+  } */
 
   /* input {
     @apply w-1/2 px-2 py-1 rounded outline-none
   } */
   .sidebar-list-item {
-    @apply whitespace-nowrap pr-8 mb-2 text-lg font-semibold text-black-three hover:text-black-four
+    @apply whitespace-nowrap pr-8 mb-2 text-lg font-semibold text-black-four opacity-60 hover:opacity-100
   }
   .navbar-list-item {
     @apply font-bold text-2xl text-yellow-400 hover:text-yellow-300
