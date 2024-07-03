@@ -1,6 +1,13 @@
+import { useEffect } from 'react'
 import ReactDOM from 'react-dom'
 
 const Modal = ({ modalContent, handleCloseModal }) => {
+
+  useEffect(() => {
+    document.body.classList.add('overflow-hidden')
+
+    return () => document.body.classList.remove('overflow-hidden')
+  },[])
 
   return ReactDOM.createPortal(
     <>
@@ -10,7 +17,7 @@ const Modal = ({ modalContent, handleCloseModal }) => {
 
       <div
         onClick={handleCloseModal}
-        className="overlay bg-black opacity-60 absolute inset-0"
+        className="overlay h-full bg-black opacity-60 fixed inset-0"
       ></div>
     </>,
     document.querySelector('.modal-container')
