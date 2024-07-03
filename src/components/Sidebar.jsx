@@ -24,6 +24,9 @@ const Sidebar = () => {
       <li className="sidebar-list-item">
         <NavLink to="/dropdown">Dropdown Page</NavLink>
       </li>
+      <li className="sidebar-list-item">
+        <NavLink to="/modal">Modal Page</NavLink>
+      </li>
     </ul>
   )
 }

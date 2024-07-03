@@ -10,6 +10,7 @@ import BookListPage from "../pages/book-list/BookListPage"
 import About from "../pages/About"
 import Contact from "../pages/Contact"
 import DropdownPage from "../pages/dropdown/DropdownPage"
+import ModalPage from "../pages/modal/ModalPage"
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
       {
         path: "dropdown",
         element: <DropdownPage/>
+      },
+      {
+        path: "modal",
+        element: <ModalPage/>
       },
 
     ],
