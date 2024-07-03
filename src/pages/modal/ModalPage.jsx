@@ -9,23 +9,13 @@ const ModalPage = () => {
     setIsOpenModal(!isOpenModal)
   }
 
-  const handleOverlayClick = () => {
-    setIsOpenModal(false)
-  }
-
   return (
     <div className="modalpage">
-      <Button btnType="primary" handleClick={handleClick}>Open Modal</Button>
+      <Button btnType="primary" handleClick={handleClick}>
+        Open Modal
+      </Button>
 
-      {isOpenModal && (
-        <>
-          <Modal setIsOpenModal={setIsOpenModal} />
-          <div
-            onClick={handleOverlayClick}
-            className="overlay bg-black opacity-60 absolute inset-0"
-          ></div>
-        </>
-      )}
+      {isOpenModal && <Modal setIsOpenModal={setIsOpenModal} />}
     </div>
   )
 }
