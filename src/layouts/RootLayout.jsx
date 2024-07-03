@@ -7,7 +7,7 @@ const RootLayout = () => {
     <div className="root-layout h-screen flex flex-col">
       <Header />
 
-      <div className="relative flex m-4 items-start max-w-[1024px] h-full">
+      <div className="flex m-4 items-start max-w-[1024px] h-full">
         <Sidebar />
 
         <main className="w-full h-full flex items-start justify-start ml-16">

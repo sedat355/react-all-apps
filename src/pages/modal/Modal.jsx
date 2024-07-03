@@ -1,10 +1,17 @@
 import Button from "../../components/Button"
 
-const Modal = () => {
+const Modal = ({isOpenModal, setIsOpenModal}) => {
+
+  const handleClick = () => {
+    setIsOpenModal(false)
+  }
   return (
-    <div className="rounded-md w-96 h-60 bg-gray-one p-4 flex absolute right-1/2 translate-x-1/2 translate-y-1/2">
+    <div className="rounded-md w-96 h-60 bg-gray-one p-4 flex absolute right-1/2 translate-x-1/2 translate-y-1/2 z-50">
       <p className="self-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, possimus officiis vero deleniti quos distinctio ipsa cupiditate rem dolores voluptates! Voluptate quaerat possimus dolore enim blanditiis ipsam quos perspiciatis error?</p>
-      <Button btnType="danger" className="self-end whitespace-nowrap">I accept</Button>
+      
+      <Button
+        handleClick={handleClick} 
+        btnType="danger" className="self-end whitespace-nowrap">I accept</Button>
     </div>
   )
 }
