@@ -2,16 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
   }  
-  /* a.active {
-    color: black;
-  } */
+  .header a.active {
+    color: white;
+  }
   h1 {
     font-size: 32px;
     font-weight: bold;
@@ -44,15 +43,15 @@
     @apply w-1/2 px-2 py-1 rounded outline-none
   } */
   .sidebar-list-item {
-    @apply whitespace-nowrap pr-8 mb-2 text-lg font-semibold text-black-four opacity-60 hover:opacity-100
+    @apply whitespace-nowrap pr-8 mb-2
+  }
+  .sidebar-list-item a {
+    @apply whitespace-nowrap pr-8 mb-2 text-xl font-semibold text-black-four opacity-60 hover:opacity-100
+  }
+  .sidebar-list-item a.active {
+    @apply opacity-100 text-blue-five
   }
   .navbar-list-item {
     @apply font-bold text-2xl text-yellow-400 hover:text-yellow-300
   }
-  
 }
-
-/* .heart-icon {
-  height: 24px;
-  width: 24px;
-} */
