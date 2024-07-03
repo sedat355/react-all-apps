@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom'
 
 const Modal = ({ modalContent, handleCloseModal }) => {
 
-  useEffect(() => {
-    document.body.classList.add('overflow-hidden')
+  // useEffect(() => {
+  //   document.body.classList.add('overflow-hidden')
 
-    return () => document.body.classList.remove('overflow-hidden')
-  },[])
+  //   return () => document.body.classList.remove('overflow-hidden')
+  // },[])
 
   return ReactDOM.createPortal(
     <>
