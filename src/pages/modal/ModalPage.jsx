@@ -15,7 +15,7 @@ const ModalPage = () => {
 
   return (
     <div className="modalpage">
-      <Button handleClick={handleClick}>Open Modal</Button>
+      <Button btnType="primary" handleClick={handleClick}>Open Modal</Button>
 
       {isOpenModal && (
         <>

@@ -11,6 +11,7 @@ import About from "../pages/About"
 import Contact from "../pages/Contact"
 import DropdownPage from "../pages/dropdown/DropdownPage"
 import ModalPage from "../pages/modal/ModalPage"
+import AppsLayout from "../layouts/AppsLayout"
 
 const router = createBrowserRouter([
   {
@@ -22,28 +23,43 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "button-page",
-        element: <ButtonPage />,
-      },
-      {
-        path: "accordion",
-        element: <Accordion />,
-      },
-      {
-        path: "digital-assistans",
-        element: <DigitalAssistans />,
-      },
-      {
-        path: "add-animal",
-        element: <AddAnimal />,
-      },
-      {
-        path: "image-gallery",
-        element: <ImageGallery />,
-      },
-      {
-        path: "book-list-page",
-        element: <BookListPage/>
+        path: "/apps",
+        element: <AppsLayout />,
+        children: [
+          {
+            path: "button-page",
+            element: <ButtonPage />,
+          },
+          {
+            path: "accordion",
+            element: <Accordion />,
+          },
+          {
+            path: "digital-assistans",
+            element: <DigitalAssistans />,
+          },
+          {
+            path: "add-animal",
+            element: <AddAnimal />,
+          },
+          {
+            path: "image-gallery",
+            element: <ImageGallery />,
+          },
+          {
+            path: "book-list-page",
+            element: <BookListPage/>
+          },
+          {
+            path: "dropdown",
+            element: <DropdownPage/>
+          },
+          {
+            path: "modal",
+            element: <ModalPage/>
+          },
+          
+        ]
       },
       {
         path: "about",
@@ -53,15 +69,6 @@ const router = createBrowserRouter([
         path: "contact",
         element: <Contact/>
       },
-      {
-        path: "dropdown",
-        element: <DropdownPage/>
-      },
-      {
-        path: "modal",
-        element: <ModalPage/>
-      },
-
     ],
   },
 ])

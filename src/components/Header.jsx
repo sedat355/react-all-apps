@@ -10,6 +10,9 @@ const Header = () => {
           <NavLink to="/">Home</NavLink>
         </li>
         <li className="navbar-list-item">
+          <NavLink to="/apps">Apps</NavLink>
+        </li>
+        <li className="navbar-list-item">
           <NavLink to="/about">About</NavLink>
         </li>
         <li className="navbar-list-item">

@@ -1,18 +1,13 @@
 import Header from "../components/Header"
-import Sidebar from "../components/Sidebar"
 import { Outlet } from "react-router-dom"
 
 const RootLayout = () => {
   return (
-    <div className="root-layout flex flex-col">
+    <div className="root-layout">
       <Header />
 
-      <div className="flex m-4 items-start max-w-[1024px]">
-        <Sidebar />
-
-        <main className="w-full flex items-start justify-start ml-16">
-          <Outlet />
-        </main>
+      <div className="p-4">
+        <Outlet/>
       </div>
     </div>
   )

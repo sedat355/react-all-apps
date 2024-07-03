@@ -1,7 +1,7 @@
 import classNames from "classnames"
 import PropTypes from "prop-types"
 
-const Button = ({children, btnType="primary", type="button", size="medium", handleClick, ...rest}) => {
+const Button = ({children, btnType, type="button", size="medium", handleClick, ...rest}) => {
 
   const baseClasses=`flex items-center justify-center font-semibold rounded bg-black-one max-w-fit ${rest.className}`;
 
