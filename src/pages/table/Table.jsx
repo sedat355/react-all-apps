@@ -1,6 +1,11 @@
 import Row from "./Row"
 
-const Table = () => {
+const Table = ({data, headers}) => {
+
+  const renderedHeaders = headers.map( header => {
+    return <th className="thead text-blue-700 text-xl" scope="col" key={header}>{header}</th>
+  })
+
   return (
     <table className="border-2 border-black-two">
       <caption>
@@ -9,22 +14,16 @@ const Table = () => {
 
       <thead>
         <tr>
-          <th scope="col" className="thead">
-            Fruits
-          </th>
-          <th scope="col" className="thead">
-            Color
-          </th>
-          <th scope="col" className="thead">
-            Score
-          </th>
+          {renderedHeaders}
         </tr>
       </thead>
 
       <tbody>
-        <Row />
-        <Row />
-        <Row />
+        {
+          data.map( fruit => {
+            return <Row fruit={fruit} key={fruit.name}/>
+          })
+        }
       </tbody>
     </table>
   )
