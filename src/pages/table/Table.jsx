@@ -7,13 +7,13 @@ const Table = ({data, headers, caption}) => {
   })
 
   return (
-    <table className="border-2 border-black-two">
+    <table className="">
       <caption>
         <h1>{caption}</h1>
       </caption>
 
       <thead>
-        <tr>
+        <tr className="border-b-2 border-sky-400">
           {renderedHeaders}
         </tr>
       </thead>

@@ -36,10 +36,10 @@
     position: relative;
   }
   .colorCol {
-    display: inline-block;
+    display: block;
     width: 20px;
     height: 20px;
-    border: 2px solid rgb(106, 106, 106);    
+    /* border: 2px solid rgb(106, 106, 106);     */
   }
   .tcolor::before {
     content: '';
@@ -50,7 +50,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%);
-    border: 2px solid rgb(106, 106, 106);
+    /* border: 2px solid rgb(106, 106, 106); */
   }
   /* .modal-container {
     min-height: 100vh;
@@ -78,6 +78,6 @@
     @apply font-bold text-2xl text-yellow-400 hover:text-yellow-300
   }
   .thead, .tdata {
-    @apply border border-black-one px-8 py-2 text-center
+    @apply px-8 py-2 text-center
   }
 }
