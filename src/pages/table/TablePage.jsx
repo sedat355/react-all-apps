@@ -9,12 +9,12 @@ const TablePage = () => {
     { id: 3, name: "Lime", color: "bg-green-500", score: "2" },
   ]
 
-  const config = [
+  const configFruits = [
     { title: 'Name',
       render: (obj) => obj.name
     },
     { title: 'Color',
-      render: function(obj) { return obj.color }
+      render: function(obj) { return <span className={`colorCol ${obj.color}`}></span> }
     },
     { title: 'Score',
       render: function(obj) { return obj.score }
@@ -22,18 +22,31 @@ const TablePage = () => {
   ]
 
   const cars = [
-    { id: 0, brand: "Mercedes", color: "bg-black-500", year: "2018", price: 15000 },
+    { id: 0, brand: "Mercedes", color: "bg-black", year: "2018", price: 15000 },
     { id: 1, brand: "BMW", color: "bg-red-500", year: "2015", price: 12000 },
     { id: 2, brand: "Toyota", color: "bg-green-500", year: "2019", price: 11000 },
     { id: 3, brand: "Honda", color: "bg-yellow-500", year: "2010", price: 9000 },
   ]
 
-  const headersCars = ["Brand", "Color", "Year", "Price"]
+  const configCars = [
+    { title: 'Brand',
+      render: (obj) => obj.brand
+    },
+    { title: 'Color',
+      render: function(obj) { return <span className={`colorCol ${obj.color}`}></span> }
+    },
+    { title: 'Price',
+      render: function(obj) { return obj.price }
+    },
+    { title: 'Year',
+      render: function(obj) { return obj.year }
+    },
+  ]
 
   return (
     <div>
-      <Table data={fruits} config={config} caption="Fruits Table"/>
-      {/* <Table data={cars} config={config} caption="Cars Table"/> */}
+      <Table data={fruits} config={configFruits} caption="Fruits Table"/>
+      <Table data={cars} config={configCars} caption="Cars Table"/>
     </div>
   )
 }
