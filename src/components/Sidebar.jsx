@@ -27,6 +27,9 @@ const Sidebar = () => {
       <li className="sidebar-list-item">
         <NavLink to="modal">Modal Page</NavLink>
       </li>
+      <li className="sidebar-list-item">
+        <NavLink to="table">Table</NavLink>
+      </li>
     </ul>
   )
 }

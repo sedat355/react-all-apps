@@ -12,6 +12,7 @@ import Contact from "../pages/Contact"
 import DropdownPage from "../pages/dropdown/DropdownPage"
 import ModalPage from "../pages/modal/ModalPage"
 import AppsLayout from "../layouts/AppsLayout"
+import TablePage from "../pages/table/TablePage"
 
 const router = createBrowserRouter([
   {
@@ -58,7 +59,10 @@ const router = createBrowserRouter([
             path: "modal",
             element: <ModalPage/>
           },
-          
+          {
+            path: "table",
+            element: <TablePage/>
+          },
         ]
       },
       {
