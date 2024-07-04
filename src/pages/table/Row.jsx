@@ -1,11 +1,11 @@
-const Row = ({fruit}) => {
+const Row = ({item}) => {
   return (
     <tr>
-      <th className="thead" scope="row">{fruit.name}</th>
+      <th className="thead" scope="row">{item.name}</th>
       <td className={`tdata relative`}>
-        <span className={`colorCol ${fruit.color}`}></span>
+        <span className={`colorCol ${item.color}`}></span>
       </td>
-      <td className="tdata">{fruit.score}</td>
+      <td className="tdata">{item.score}</td>
     </tr>
   )
 }
