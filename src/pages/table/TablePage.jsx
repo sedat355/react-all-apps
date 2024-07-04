@@ -1,6 +1,12 @@
+import Table from "./Table"
+
 const TablePage = () => {
+
+  
   return (
-    <div>Table Page</div>
+    <div>
+      <Table/>
+    </div>
   )
 }
 
