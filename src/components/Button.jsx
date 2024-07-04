@@ -27,7 +27,7 @@ const Button = ({children, btnType, type="button", size="medium", handleClick, .
     "px-2 py-1 text-md max-w-full": size === 'full',  
   }
 
-  const btnClasses = classNames(baseClasses, variants)
+  const btnClasses = classNames(variants, baseClasses)
 
   return <button {...rest} type={type} onClick={handleClick} className={btnClasses}>{children}</button>
 }
