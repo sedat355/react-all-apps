@@ -1,9 +1,17 @@
 import Row from "./Row"
+import { LiaSortSolid } from 'react-icons/lia'
 
 const Table = ({data, config, caption}) => {
 
   const renderedHeaders = config.map( (column, index) => {
-    return <th className="thead text-blue-700 text-xl" scope="col" key={index}>{column.title}</th>
+    return( 
+      <th className="thead text-blue-700 text-xl" scope="col" key={index}>
+        <div className="flex items-center gap-x-1">
+          {column.title === 'Score' && <LiaSortSolid/> }
+          {column.title}
+        </div>
+      </th>
+    )
   })
 
   return (

@@ -2,7 +2,11 @@ const Row = ({ item, config }) => {
   return (
     <tr className="border-b-2">
       {config.map((column, index) => {
-        return <td key={index} className="tdata">{column.render(item)}</td>
+        return <td key={index} className="tdata">
+          <div className="flex items-center justify-center">
+            {column.render(item)}
+          </div>
+        </td>
       })}
     </tr>
   )
