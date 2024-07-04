@@ -5,11 +5,21 @@ const TablePage = () => {
   const fruits = [
     { id: 0, name: "Orange", color: "bg-orange-500", score: "5" },
     { id: 1, name: "Apple", color: "bg-red-500", score: "3" },
-    { id: 2, name: "banana", color: "bg-yellow-500", score: "1" },
-    { id: 3, name: "lime", color: "bg-green-500", score: "2" },
+    { id: 2, name: "Banana", color: "bg-yellow-500", score: "1" },
+    { id: 3, name: "Lime", color: "bg-green-500", score: "2" },
   ]
 
-  const headersFruits = ["Fruit", "Color", "Score"]
+  const config = [
+    { title: 'Name',
+      render: (obj) => obj.name
+    },
+    { title: 'Color',
+      render: function(obj) { return obj.color }
+    },
+    { title: 'Score',
+      render: function(obj) { return obj.score }
+    },
+  ]
 
   const cars = [
     { id: 0, brand: "Mercedes", color: "bg-black-500", year: "2018", price: 15000 },
@@ -22,8 +32,8 @@ const TablePage = () => {
 
   return (
     <div>
-      <Table data={fruits} headers={headersFruits} caption="Fruits Table"/>
-      {/* <Table data={cars} headers={headersCars} caption="Cars Table"/> */}
+      <Table data={fruits} config={config} caption="Fruits Table"/>
+      {/* <Table data={cars} config={config} caption="Cars Table"/> */}
     </div>
   )
 }

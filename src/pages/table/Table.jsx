@@ -1,13 +1,13 @@
 import Row from "./Row"
 
-const Table = ({data, headers, caption}) => {
+const Table = ({data, config, caption}) => {
 
-  const renderedHeaders = headers.map( header => {
-    return <th className="thead text-blue-700 text-xl" scope="col" key={header}>{header}</th>
+  const renderedHeaders = config.map( (column, index) => {
+    return <th className="thead text-blue-700 text-xl" scope="col" key={index}>{column.title}</th>
   })
 
   return (
-    <table className="">
+    <table className="mb-8">
       <caption>
         <h1>{caption}</h1>
       </caption>
@@ -21,7 +21,7 @@ const Table = ({data, headers, caption}) => {
       <tbody>
         {
           data.map( item => {
-            return <Row item={item} key={item.id}/>
+            return <Row item={item} config={config} key={item.id}/>
           })
         }
       </tbody>
