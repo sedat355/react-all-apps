@@ -1,6 +1,12 @@
+import Button from "../../components/Button"
 import Table from "./Table"
+import { LiaSortSolid } from 'react-icons/lia'
 
 const TablePage = () => {
+
+  const handleSort = () => {
+    console.log("handleSort")
+  }
 
   const fruits = [
     { id: 0, name: "Orange", color: "bg-orange-500", score: "5" },
@@ -17,7 +23,15 @@ const TablePage = () => {
       render: function(obj) { return <span className={`colorCol ${obj.color}`}></span> }
     },
     { title: 'Score',
-      render: function(obj) { return obj.score }
+      render: function(obj) { return obj.score },
+      header: function() {
+        return(
+          <Button handleClick={handleSort} btnType="outline" size="circle-lg" className="border-none py-0 px-0 "
+          >
+            <LiaSortSolid/>
+          </Button>
+        )
+      }
     },
   ]
 
