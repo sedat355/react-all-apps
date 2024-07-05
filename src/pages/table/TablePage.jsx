@@ -1,4 +1,5 @@
 import Button from "../../components/Button"
+import SortableTable from "./SortableTable"
 import Table from "./Table"
 import { LiaSortSolid } from 'react-icons/lia'
 
@@ -59,7 +60,7 @@ const TablePage = () => {
 
   return (
     <div>
-      <Table data={fruits} config={configFruits} caption="Fruits Table"/>
+      <SortableTable data={fruits} config={configFruits} caption="Fruits Table"/>
       <Table data={cars} config={configCars} caption="Cars Table"/>
     </div>
   )
