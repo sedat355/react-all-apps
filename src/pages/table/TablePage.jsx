@@ -1,13 +1,6 @@
-import Button from "../../components/Button"
 import SortableTable from "./SortableTable"
 import Table from "./Table"
-import { LiaSortSolid } from 'react-icons/lia'
-
 const TablePage = () => {
-
-  const handleSort = () => {
-    console.log("handleSort")
-  }
 
   const fruits = [
     { id: 0, name: "Orange", color: "bg-orange-500", score: "5" },
@@ -16,23 +9,18 @@ const TablePage = () => {
     { id: 3, name: "Lime", color: "bg-green-500", score: "2" },
   ]
 
+  //sıralama yapılacak olan başlıkların temsil edildiği nesnelere sortValue fonk. ekleniyor.
   const configFruits = [
     { title: 'Name',
-      render: (obj) => obj.name
+      render: (obj) => obj.name,
+      sortValue: (obj) => obj.name
     },
     { title: 'Color',
-      render: function(obj) { return <span className={`colorCol ${obj.color}`}></span> }
+      render: function(obj) { return <span className={`colorCol ${obj.color}`}></span> },
     },
     { title: 'Score',
       render: function(obj) { return obj.score },
-      header: function() {
-        return(
-          <Button handleClick={handleSort} btnType="outline" size="circle-lg" className="border-none py-0 px-0 "
-          >
-            <LiaSortSolid/>
-          </Button>
-        )
-      }
+      sortValue: (obj) => obj.score
     },
   ]
 

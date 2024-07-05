@@ -1,6 +1,9 @@
 import Row from "./Row"
 
-const Table = ({data, config, caption}) => {
+const Table = (props) => {
+  const { data, config, caption } = props;
+
+  console.log("config", config)
 
   function getSortScore(obj) {
     return obj.score
