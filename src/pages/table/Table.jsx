@@ -3,8 +3,7 @@ import Row from "./Row"
 const Table = (props) => {
   const { data, config, caption } = props;
 
-  console.log("config", config)
-
+  /*
   function getSortScore(obj) {
     return obj.score
   }
@@ -24,7 +23,7 @@ const Table = (props) => {
       return (valueA - valueB) * reverseOrder;
     }
   })
-
+  */
   const renderedHeaders = config.map( (column, index) => {
     return( 
       <th className={`thead text-blue-700 text-xl`} scope="col" key={index}>
