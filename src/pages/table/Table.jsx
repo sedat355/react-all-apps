@@ -3,27 +3,6 @@ import Row from "./Row"
 const Table = (props) => {
   const { data, config, caption } = props;
 
-  /*
-  function getSortScore(obj) {
-    return obj.score
-  }
-
-  const sortOrder = "asc";
-  //artan sıralama için "asc", azalan sıralama için "desc"
-
-  data.toSorted((a,b) => {
-    const valueA = getSortScore(a);
-    const valueB = getSortScore(b);
-
-    const reverseOrder = sortOrder === "asc" ? 1 : -1;
-
-    if( typeof valueA === "string" ) {
-      return valueA.localeCompare(valueB) * reverseOrder;
-    } else {
-      return (valueA - valueB) * reverseOrder;
-    }
-  })
-  */
   const renderedHeaders = config.map( (column, index) => {
     return( 
       <th className={`thead text-blue-700 text-xl`} scope="col" key={index}>

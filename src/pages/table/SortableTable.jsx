@@ -2,16 +2,23 @@ import { useState } from "react"
 import Button from "../../components/Button"
 import Table from "./Table"
 import { LiaSortSolid } from "react-icons/lia"
+import { LiaSortDownSolid } from "react-icons/lia"
+import { LiaSortUpSolid } from "react-icons/lia"
 
 const SortableTable = props => {
   const [ sortingState, setSortingState ] = useState(null)//null-artan-azalan
   const [ sortedColumn, setSortedColumn ] = useState(null)//null-name-score
 
-  console.log(sortingState, sortedColumn)
-
   const { config, data } = props
 
   const handleSortClick = (title) => {
+    //başka sütun başlığına tıklandığında sortingState' i 'artan' dan başlatma:
+    if( sortedColumn && title !== sortedColumn ) {
+      setSortingState("artan")
+      setSortedColumn(title)
+      return
+    }
+    //.............................
     if( sortingState === null ) {
       setSortingState('artan')
       setSortedColumn(title)
@@ -21,6 +28,20 @@ const SortableTable = props => {
     } else if( sortingState === 'azalan' ) {
       setSortingState(null)
       setSortedColumn(null)
+    }
+  }
+
+  const getSortIcon = (sortingState, sortedColumn, title) => {
+    if( title !== sortedColumn ) {
+      return <LiaSortSolid/>
+    }
+
+    if( sortingState === null ) {
+      return <LiaSortSolid/>
+    } else if( sortingState === 'artan' ) {
+      return <LiaSortUpSolid/>
+    } else if( sortingState === 'azalan' ) {
+      return <LiaSortDownSolid/>
     }
   }
 
@@ -40,7 +61,7 @@ const SortableTable = props => {
             size="circle-lg"
             className="border-none py-0 px-0 "
           >
-            <LiaSortSolid />
+            {getSortIcon(sortingState, sortedColumn, column.title)}
           </Button>
         )
       },
@@ -58,8 +79,6 @@ const SortableTable = props => {
       const valueB = sortValue(b);
 
       const reverseOrder = sortingState === 'artan' ? 1 : -1;
-
-      console.log(reverseOrder)
 
       if( typeof valueA === 'string' ) {
         return valueA.localeCompare(valueB) * reverseOrder;
