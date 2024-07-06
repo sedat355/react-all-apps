@@ -53,7 +53,7 @@ const SortableTable = props => {
     //Kullanacağımız doğru sortValue fonk. config dizisinden alıyoruz: Sağdaki ifade nesnenin tamamını döndüreceği için, bu nesneden sortValue öz. destructuring ile çekiyoruz.
     const { sortValue } = config.find(column => column.title === sortedColumn)
 
-    sortedData = [...data].sort((a,b) => {
+    sortedData = data.toSorted((a,b) => {
       const valueA = sortValue(a);
       const valueB = sortValue(b);
 
