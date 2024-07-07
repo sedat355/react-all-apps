@@ -1,4 +1,4 @@
-import { useReducer } from "react"
+import { useReducer, useRef } from "react"
 import Button from "../components/Button"
 
 const ACTIONS = {
@@ -25,11 +25,14 @@ const counterReducer = (counter, action) => {
 
 const initialState = {
   count: 0,
-  inputVal: "",
+  inputVal: 0,
 }
 
 const CounterPage = () => {
   const [counter, dispatch] = useReducer(counterReducer, initialState)
+  const inputRef = useRef()
+
+  console.log(counter)
 
   function increment() {
     dispatch({ type: ACTIONS.INCREMENT })
@@ -42,6 +45,7 @@ const CounterPage = () => {
   function handleAddClick() {
     dispatch({ type: ACTIONS.ADD_INPUT_VAL, payload: counter.inputVal })
     dispatch({ type: ACTIONS.CHANGE_INPUT, payload: "" })
+    inputRef.current.focus()
   }
 
   function handleChange(e) {
@@ -66,6 +70,8 @@ const CounterPage = () => {
 
       <form className="flex gap-x-2 mt-4">
         <input
+          ref={inputRef}
+          type="number"
           value={counter.inputVal}
           onChange={handleChange}
           className="border border-black-one rounded py-1 px-2"
