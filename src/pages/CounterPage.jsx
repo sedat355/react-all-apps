@@ -5,6 +5,21 @@ const CounterPage = () => {
   const [count, setCount] = useState(0)
   const [inputVal, setInputVal] = useState("")
 
+  console.log(inputVal)
+
+  function increment() {
+    setCount(count + 1)
+  }
+
+  function decrement() {
+    setCount(count - 1)
+  }
+
+  function handleAddClick() {
+    setCount(count + Number(inputVal))
+    setInputVal("")
+  }
+
   return (
     <div>
       <span className="text-xl">
@@ -12,13 +27,21 @@ const CounterPage = () => {
       </span>
 
       <div className="flex gap-x-2 mt-2">
-        <Button btnType="primary">Increment</Button>
-        <Button btnType="danger">Decrement</Button>
+        <Button handleClick={increment} btnType="primary">
+          Increment
+        </Button>
+        <Button handleClick={decrement} btnType="danger">
+          Decrement
+        </Button>
       </div>
 
       <form className="flex gap-x-2 mt-4">
-        <input className="border border-black-one rounded" />
-        <Button className="" btnType="outline">
+        <input
+          value={inputVal}
+          onChange={e => setInputVal(e.target.value)}
+          className="border border-black-one rounded py-1 px-2"
+        />
+        <Button handleClick={handleAddClick} className="" btnType="outline">
           Add it
         </Button>
       </form>
