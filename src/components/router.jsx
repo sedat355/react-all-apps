@@ -13,6 +13,7 @@ import DropdownPage from "../pages/dropdown/DropdownPage"
 import ModalPage from "../pages/modal/ModalPage"
 import AppsLayout from "../layouts/AppsLayout"
 import TablePage from "../pages/table/TablePage"
+import CounterPage from "../pages/CounterPage"
 
 const router = createBrowserRouter([
   {
@@ -49,29 +50,33 @@ const router = createBrowserRouter([
           },
           {
             path: "book-list-page",
-            element: <BookListPage/>
+            element: <BookListPage />,
           },
           {
             path: "dropdown",
-            element: <DropdownPage/>
+            element: <DropdownPage />,
           },
           {
             path: "modal",
-            element: <ModalPage/>
+            element: <ModalPage />,
           },
           {
             path: "table",
-            element: <TablePage/>
+            element: <TablePage />,
           },
-        ]
+          {
+            path: "counter",
+            element: <CounterPage />,
+          },
+        ],
       },
       {
         path: "about",
-        element: <About/>
+        element: <About />,
       },
       {
         path: "contact",
-        element: <Contact/>
+        element: <Contact />,
       },
     ],
   },

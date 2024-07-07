@@ -30,6 +30,9 @@ const Sidebar = () => {
       <li className="sidebar-list-item">
         <NavLink to="table">Table</NavLink>
       </li>
+      <li className="sidebar-list-item">
+        <NavLink to="counter">Counter</NavLink>
+      </li>
     </ul>
   )
 }
