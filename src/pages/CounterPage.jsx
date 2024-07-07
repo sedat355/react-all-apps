@@ -17,7 +17,11 @@ const counterReducer = (counter, action) => {
     case ACTIONS.CHANGE_INPUT:
       return { ...counter, inputVal: action.payload }
     case ACTIONS.ADD_INPUT_VAL:
-      return { ...counter, count: counter.count + Number(action.payload) }
+      return {
+        ...counter,
+        count: counter.count + counter.inputVal,
+        inputVal: "",
+      }
     default:
       throw Error("Olay tanımlanamadı!!")
   }
@@ -44,13 +48,12 @@ const CounterPage = () => {
 
   function handleAddClick(e) {
     e.preventDefault()
-    dispatch({ type: ACTIONS.ADD_INPUT_VAL, payload: counter.inputVal })
-    dispatch({ type: ACTIONS.CHANGE_INPUT, payload: "" })
+    dispatch({ type: ACTIONS.ADD_INPUT_VAL })
     inputRef.current.focus()
   }
 
   function handleChange(e) {
-    const value = e.target.value
+    const value = Number(e.target.value)
     dispatch({ type: ACTIONS.CHANGE_INPUT, payload: value })
   }
 
@@ -73,7 +76,7 @@ const CounterPage = () => {
         <input
           ref={inputRef}
           type="number"
-          value={counter.inputVal}
+          value={counter.inputVal || ""}
           onChange={handleChange}
           className="border border-black-one rounded py-1 px-2"
         />
