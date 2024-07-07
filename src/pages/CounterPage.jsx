@@ -42,7 +42,8 @@ const CounterPage = () => {
     dispatch({ type: ACTIONS.DECREMENT })
   }
 
-  function handleAddClick() {
+  function handleAddClick(e) {
+    e.preventDefault()
     dispatch({ type: ACTIONS.ADD_INPUT_VAL, payload: counter.inputVal })
     dispatch({ type: ACTIONS.CHANGE_INPUT, payload: "" })
     inputRef.current.focus()
@@ -76,7 +77,12 @@ const CounterPage = () => {
           onChange={handleChange}
           className="border border-black-one rounded py-1 px-2"
         />
-        <Button handleClick={handleAddClick} className="" btnType="outline">
+        <Button
+          type="submit"
+          handleClick={handleAddClick}
+          className=""
+          btnType="outline"
+        >
           Add it
         </Button>
       </form>
