@@ -7,8 +7,6 @@ import useBooksContext from "../../hooks/useBooksContext"
 const BookList = () => {
   const { books, setBooks, stableGetBooks } = useBooksContext()
 
-  console.log("booksContext:", books)
-
   // useEffect(() => {
   //   stableGetBooks("http://localhost:3000/books").then(data => setBooks(data))
   // }, [stableGetBooks])

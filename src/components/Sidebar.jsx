@@ -31,7 +31,10 @@ const Sidebar = () => {
         <NavLink to="table">Table</NavLink>
       </li>
       <li className="sidebar-list-item">
-        <NavLink to="counter">Counter</NavLink>
+        <NavLink to="counter">Counter (useReducer)</NavLink>
+      </li>
+      <li className="sidebar-list-item">
+        <NavLink to="playlist">Playlists (redux)</NavLink>
       </li>
     </ul>
   )

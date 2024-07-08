@@ -36,8 +36,6 @@ const CounterPage = () => {
   const [counter, dispatch] = useReducer(counterReducer, initialState)
   const inputRef = useRef()
 
-  console.log(counter)
-
   function increment() {
     dispatch({ type: ACTIONS.INCREMENT })
   }

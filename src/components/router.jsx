@@ -14,6 +14,7 @@ import ModalPage from "../pages/modal/ModalPage"
 import AppsLayout from "../layouts/AppsLayout"
 import TablePage from "../pages/table/TablePage"
 import CounterPage from "../pages/CounterPage"
+import PlaylistPage from "../pages/playlist/PlaylistPage"
 
 const router = createBrowserRouter([
   {
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
           {
             path: "counter",
             element: <CounterPage />,
+          },
+          {
+            path: "playlist",
+            element: <PlaylistPage />,
           },
         ],
       },
