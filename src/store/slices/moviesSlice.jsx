@@ -10,7 +10,7 @@ const moviesSlice = createSlice({
   name: "movie",
   initialState: initialState,
   reducers: {
-    addMovie: (state, action) => {
+    addMovie: (state) => {
       state.push( {id: nanoid(), name: faker.person.fullName()} )
     },
     removeMovie: (state,action) => {

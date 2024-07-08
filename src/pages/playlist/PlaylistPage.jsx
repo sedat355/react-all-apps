@@ -1,21 +1,14 @@
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import Button from "../../components/Button"
 import MovieList from "./MovieList"
 import SongList from "./SongList"
-import { addMovie, removeMovie } from "../../store/slices/moviesSlice"
+import { addMovie } from "../../store/slices/moviesSlice"
 
 const PlaylistPage = () => {
-  const movies = useSelector(state => state.movies)
   const dispatch = useDispatch()
-
-  console.log(movies)
 
   const addToMovieList = () => {
     dispatch(addMovie())
-  }
-
-  const removeFromMovieList = (movieId) => {
-    dispatch(removeMovie(movieId))
   }
 
   return (
@@ -30,7 +23,7 @@ const PlaylistPage = () => {
             btnType="primary">+Add Movie</Button>
         </div>
 
-        <MovieList movies={movies} removeFromMovieList={removeFromMovieList} />
+        <MovieList />
       </div>
 
       <div className="playlist-container">

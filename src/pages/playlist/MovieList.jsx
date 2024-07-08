@@ -1,18 +1,20 @@
+import { useDispatch, useSelector } from "react-redux"
 import Button from "../../components/Button"
 import { IoClose } from "react-icons/io5"
+import { removeMovie } from "../../store/slices/moviesSlice"
 
-const MovieList = ({ movies, removeFromMovieList }) => {
+const MovieList = () => {
+  const movies = useSelector(state => state.movies)
+  const dispatch = useDispatch()
 
-  const handelRemoveMovie = (id) => {
-    removeFromMovieList(id)
-  }
+  console.log(movies)
 
   const renderedMovies = movies.map(movie => {
     return (
       <li className="playlist-item" key={movie.id}>
         <span className="font-semibold">{movie.name}</span>
         <Button 
-          handleClick={() => handelRemoveMovie(movie.id)}
+          handleClick={() => dispatch(removeMovie(movie.id))}
           btnType="outline" size="circle-md" className="border-none hover:bg-red-one hover:text-white">
           <IoClose/>
         </Button>
