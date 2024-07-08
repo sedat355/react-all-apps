@@ -1,4 +1,5 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit"
+import { faker } from '@faker-js/faker'
 
 const initialState = [
   { id: nanoid(), name: "The Holdovers" },
@@ -9,8 +10,8 @@ const moviesSlice = createSlice({
   name: "movie",
   initialState: initialState,
   reducers: {
-    addMovie: () => {
-      //..
+    addMovie: (state, action) => {
+      state.push( {id: nanoid(), name: faker.person.fullName()} )
     },
     removeMovie: () => {
       //...
@@ -19,4 +20,4 @@ const moviesSlice = createSlice({
 })
 
 export const moviesReducer = moviesSlice.reducer
-export const { addMovie, removeMovie } = moviesSlice
+export const { addMovie, removeMovie } = moviesSlice.actions
