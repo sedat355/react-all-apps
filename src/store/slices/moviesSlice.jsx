@@ -13,8 +13,15 @@ const moviesSlice = createSlice({
     addMovie: (state, action) => {
       state.push( {id: nanoid(), name: faker.person.fullName()} )
     },
-    removeMovie: () => {
-      //...
+    removeMovie: (state,action) => {
+      console.log("state", state)
+      console.log("action", action)
+      //mutasyonlu:
+      const deleteIndex = state.findIndex(movie => movie.id === action.payload)
+      state.splice(deleteIndex,1)
+
+      //mutasyonsuz:
+      //return state.filter( movie => movie.id !== action.payload)
     },
   },
 })

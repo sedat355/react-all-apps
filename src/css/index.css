@@ -76,6 +76,6 @@
     @apply flex flex-col items-start mt-4 w-[400px] list-decimal;
   }
   .playlist-item {
-    @apply border-b border-gray-300 py-2 w-full flex items-center justify-between;
+    @apply border-b border-gray-300 last:border-none py-2 w-full flex items-center justify-between;
   }
 }
