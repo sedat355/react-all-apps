@@ -52,21 +52,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%);
-    /* border: 2px solid rgb(106, 106, 106); */
   }
-  /* .modal-container {
-    min-height: 100vh;
-  } */
-  /* body {
-    min-height: 100vh;
-  } */
-  /* #root {
-    min-height: 100vh;
-  } */
-
-  /* input {
-    @apply w-1/2 px-2 py-1 rounded outline-none
-  } */
   .sidebar-list-item {
     @apply whitespace-nowrap pr-8 mb-2;
   }
@@ -83,7 +69,13 @@
   .tdata {
     @apply px-8 py-2 text-center;
   }
+  .playlist-container {
+    @apply border border-black-one rounded p-4;
+  }
   .playlist {
-    @apply flex items-center justify-between gap-x-2 border border-black-one p-4 rounded w-[400px];
+    @apply flex flex-col items-start mt-4 w-[400px] list-decimal;
+  }
+  .playlist-item {
+    @apply border-b border-gray-300 py-2 w-full flex items-center justify-between;
   }
 }

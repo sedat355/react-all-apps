@@ -1,45 +1,40 @@
-import { useState } from 'react'
-import Button from '../../components/Button'
-import Animal from './Animal';
+import { useState } from "react"
+import Button from "../../components/Button"
+import Animal from "./Animal"
 
-const animalsArray = ['bird', 'cat', 'cow', 'dog', 'gator', 'horse'];
+const animalsArray = ["bird", "cat", "cow", "dog", "gator", "horse"]
 
-const getRandomAnimal = (arr) => {
-  const randomIndex = Math.floor(Math.random() * (arr.length));
+const getRandomAnimal = arr => {
+  const randomIndex = Math.floor(Math.random() * arr.length)
   return arr[randomIndex]
 }
 
 const AddAnimal = () => {
-  const [ animals, setAnimals ] = useState([]);
+  const [animals, setAnimals] = useState([])
 
   const addAnimal = () => {
     const animal = getRandomAnimal(animalsArray)
 
-    if(!animals.includes(animal)) {
+    if (!animals.includes(animal)) {
       setAnimals([...animals, animal])
-    } else if(animals.length !== animalsArray.length){
-      addAnimal();
+    } else if (animals.length !== animalsArray.length) {
+      addAnimal()
     } else {
-      alert("Gösterilecek başka hayvan yok!!")
+      alert("Gösterilecek başka resim yok!!")
     }
   }
 
-  const renderedAnimals = animals.map( (animal, index) => {
-    return(
-     <Animal key={index} animal={animal}/>
-    )
+  const renderedAnimals = animals.map((animal, index) => {
+    return <Animal key={index} animal={animal} />
   })
 
   return (
     <div>
-      <Button 
-        btnType="outline"
-        handleClick={addAnimal}
-      >
+      <Button btnType="outline" handleClick={addAnimal}>
         Add Animal
       </Button>
 
-      <ul className='flex flex-wrap items-center justify-center gap-4 mt-8'>
+      <ul className="flex flex-wrap items-center justify-center gap-4 mt-8">
         {renderedAnimals}
       </ul>
     </div>
