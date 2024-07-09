@@ -11,11 +11,9 @@ const moviesSlice = createSlice({
   initialState: initialState,
   reducers: {
     addMovie: (state) => {
-      state.push( {id: nanoid(), name: faker.person.fullName()} )
+      state.push( {id: nanoid(), name: faker.music.songName()} )
     },
     removeMovie: (state,action) => {
-      console.log("state", state)
-      console.log("action", action)
       //mutasyonlu:
       const deleteIndex = state.findIndex(movie => movie.id === action.payload)
       state.splice(deleteIndex,1)

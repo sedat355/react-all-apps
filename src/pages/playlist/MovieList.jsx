@@ -2,12 +2,14 @@ import { useDispatch, useSelector } from "react-redux"
 import Button from "../../components/Button"
 import { IoClose } from "react-icons/io5"
 import { removeMovie } from "../../store/slices/moviesSlice"
+import store from "../../store"
 
 const MovieList = () => {
   const movies = useSelector(state => state.movies)
   const dispatch = useDispatch()
 
-  console.log(movies)
+  console.log(store.getState())//{movies: Array(2), songs: Array(2)}
+  console.log(store.getState().movies)//(2) [{…}, {…}]
 
   const renderedMovies = movies.map(movie => {
     return (
