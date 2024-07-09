@@ -22,7 +22,7 @@ const SongList = () => {
 
   return(
     <ul className="playlist">
-      {renderedSongs}
+      {songs.length ? renderedSongs : <strong className="text-gray-500">Liste şu anda boş</strong>}
     </ul>
   )
 }

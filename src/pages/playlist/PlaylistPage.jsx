@@ -3,7 +3,7 @@ import Button from "../../components/Button"
 import MovieList from "./MovieList"
 import SongList from "./SongList"
 import { addMovie } from "../../store/slices/moviesSlice"
-import { addSong } from "../../store/slices/songsSlice"
+import { addSong, emptyAction } from "../../store/slices/songsSlice"
 
 const PlaylistPage = () => {
   const dispatch = useDispatch()
@@ -18,7 +18,9 @@ const PlaylistPage = () => {
 
   return (
     <div className="flex flex-col gap-y-2">
-      <Button btnType="danger">Reset Both Playlists</Button>
+      <Button 
+        handleClick={() => dispatch(emptyAction())}
+        btnType="danger">Reset Both Playlists</Button>
 
       <div className="playlist-container">
         <div className="flex items-center justify-between">
